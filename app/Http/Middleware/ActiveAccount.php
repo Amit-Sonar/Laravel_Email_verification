@@ -20,7 +20,7 @@ class ActiveAccount
     public function handle($request, Closure $next)
     {
        
-       if ( $request->user()->verified === 0 && !$request->user()->email_token == null ) {
+       if ( $request->user()->verified == 0 && !$request->user()->email_token == null ) {
             return  redirect('/activateAccount');
         }
         
